@@ -1,0 +1,48 @@
+project:
+  name: federated-crops-production-prediction
+  mode: centralized  # centralized | federated
+  seed: 42
+
+paths:
+  final_dataset: data/processed/final_province_dataset.csv
+  output_dir: results
+
+data:
+  date_column: date
+  group_column: province
+  target_column: paddy_prod
+  feature_columns:
+    - PRECTOTCORR
+    - RH2M
+    - T2M
+    - harvested_area
+  sequence:
+    window_size: 12
+    horizon: 1
+
+model:
+  name: lstm  # rnn | lstm | gru | bilstm
+  input_size: 4
+  hidden_size: 32
+  num_layers: 1
+  output_size: 1
+
+training:
+  loss: mse
+  optimizer: adam
+  learning_rate: 0.001
+  epochs: 50
+  batch_size: 32
+  device: auto
+
+federated:
+  enabled: false
+  rounds: 10
+  local_epochs: 1
+  fraction_fit: 1.0
+  fraction_evaluate: 1.0
+
+evaluation:
+  metrics:
+    - mae
+    - rmse

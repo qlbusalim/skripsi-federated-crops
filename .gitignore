@@ -1,0 +1,10 @@
+# documents
+*.csv
+*.xlsx
+
+# notebooks
+*.ipynb
+
+# Python cache
+__pycache__/
+*.py[cod]
