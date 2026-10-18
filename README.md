@@ -7,7 +7,7 @@ Kerangka penelitian skripsi untuk memprediksi produksi padi menggunakan data cua
 - Data cuaca sudah dinormalisasi dan diagregasi per provinsi.
 - Data pertanian sudah dinormalisasi dari `data_paddy.xlsx`.
 - Dataset gabungan provinsi sudah tersedia.
-- Model RNN, LSTM, GRU, dan BiLSTM tersedia sebagai kerangka regresi.
+- Model yang akan dibandingkan: RNN, LSTM, GRU.
 - Loss training ditetapkan menggunakan MSE.
 - Evaluasi ditetapkan menggunakan MAE dan RMSE.
 - Split temporal, training penuh, dan simulasi FL masih disiapkan sebagai tahap berikutnya.
