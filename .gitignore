@@ -1,9 +1,5 @@
-# documents
-*.csv
-*.xlsx
-
 # notebooks
-*.ipynb
+# *.ipynb
 
 # Python cache
 __pycache__/
