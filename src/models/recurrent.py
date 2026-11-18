@@ -59,3 +59,16 @@ class BiLSTM(nn.Module):
         out = self.fc(out[:, -1, :])
         return out
     
+class BiGRU(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, output_size):
+        super(BiGRU, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.gru = nn.GRU(input_size, hidden_size, num_layers, batch_first=True, bidirectional=True)
+        self.fc = nn.Linear(hidden_size * 2, output_size)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size).to(x.device)
+        out, _ = self.gru(x, h0)
+        out = self.fc(out[:, -1, :])
+        return out

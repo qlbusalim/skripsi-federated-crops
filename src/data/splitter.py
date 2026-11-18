@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from typing import Any
 
+import numpy as np
 import pandas as pd
 
 
@@ -65,3 +66,44 @@ def split_and_scale(
 		X_test = scaler.transform(X_test)
 
 	return X_train, X_test, y_train, y_test, scaler
+
+
+def split_sequences_by_time(
+	X: np.ndarray,
+	y: np.ndarray,
+	metadata: pd.DataFrame,
+	time_column: str = "date",
+	train_end: str | pd.Timestamp = "2023-12-01",
+	validation_end: str | pd.Timestamp = "2024-12-01",
+) -> dict[str, tuple[np.ndarray, np.ndarray, pd.DataFrame]]:
+	"""Split already-created sequences using their target dates.
+
+	The sequence window may contain observations from the preceding period;
+	only the target date determines the split. This is the correct convention
+	for one-step-ahead forecasting with a rolling input window.
+	"""
+	if len(X) != len(y) or len(X) != len(metadata):
+		raise ValueError("X, y, and metadata must contain the same number of samples")
+	if time_column not in metadata.columns:
+		raise KeyError(f"Column not found: {time_column}")
+
+	dates = pd.to_datetime(metadata[time_column], errors="coerce")
+	if dates.isna().any():
+		raise ValueError("Sequence metadata contains invalid dates")
+	train_end = pd.Timestamp(train_end)
+	validation_end = pd.Timestamp(validation_end)
+	if train_end >= validation_end:
+		raise ValueError("train_end must be earlier than validation_end")
+
+	masks = {
+		"train": dates <= train_end,
+		"validation": (dates > train_end) & (dates <= validation_end),
+		"test": dates > validation_end,
+	}
+	result = {}
+	for name, mask in masks.items():
+		indices = np.flatnonzero(mask.to_numpy())
+		if len(indices) == 0:
+			raise ValueError(f"Temporal split '{name}' is empty")
+		result[name] = (X[indices], y[indices], metadata.iloc[indices].reset_index(drop=True))
+	return result

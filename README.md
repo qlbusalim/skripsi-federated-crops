@@ -7,7 +7,11 @@ Kerangka penelitian skripsi untuk memprediksi produksi padi menggunakan data cua
 - Data cuaca sudah dinormalisasi dan diagregasi per provinsi.
 - Data pertanian sudah dinormalisasi dari `data_paddy.xlsx`.
 - Dataset gabungan provinsi sudah tersedia.
+<<<<<<< HEAD
 - Model yang akan dibandingkan: RNN, LSTM, GRU.
+=======
+- Model RNN, LSTM, GRU, BiLSTM, dan BiGRU tersedia sebagai kerangka regresi.
+>>>>>>> 18900a1 (chore restore local notebook changes)
 - Loss training ditetapkan menggunakan MSE.
 - Evaluasi ditetapkan menggunakan MAE dan RMSE.
 - Split temporal, training penuh, dan simulasi FL masih disiapkan sebagai tahap berikutnya.
@@ -71,15 +75,43 @@ data/processed/agriculture_monthly_by_province.csv
 data/processed/final_province_dataset.csv
 ```
 
-## Preview eksperimen centralized
+## Eksperimen centralized per-client
 
-Kerangka centralized digunakan untuk membandingkan model tanpa federated learning.
+Eksperimen centralized melatih satu model independen untuk setiap client
+(satu client untuk setiap provinsi). Tidak ada pertukaran bobot atau agregasi
+FedAvg pada tahap ini. Dengan dataset saat ini, lima model dilatih: Banten,
+DI Yogyakarta, Jawa Barat, Jawa Tengah, dan Jawa Timur.
 
 ```powershell
 python -m experiments.run_centralized
 ```
 
-Tahap ini baru memuat dataset, membuat sequence, membuat model, dan menyiapkan MSE loss. Split dan training belum diaktifkan.
+Setiap client memiliki sequence, temporal split, scaler, checkpoint, history,
+prediksi, dan metrics sendiri. Ringkasan metrics tersedia di
+`results/centralized/all_client_metrics.csv`.
+
+Kolom metrics membedakan `training_mae`, `training_rmse`, `testing_mae`, dan
+`testing_rmse`. Nama model mengikuti konfigurasi, misalnya `rnn_1` sampai
+`rnn_5`; nama tersebut juga tercatat pada file metrics dan prediksi.
+
+## Tuning centralized dengan Optuna
+
+Jalankan tuning dari environment `torch-flwr`:
+
+```powershell
+python -m experiments.tune_centralized
+```
+
+Setiap trial menggunakan hyperparameter yang sama untuk kelima client, tetapi
+masing-masing client tetap dilatih dengan modelnya sendiri. Objective Optuna
+adalah rata-rata validation MAE kelima client; data test tidak digunakan selama
+tuning. Hasil tuning disimpan di `results/optuna/`, termasuk `best_config.yaml`,
+`best_params.yaml`, `trials.csv`, dan database study.
+
+Konfigurasi ruang pencarian berada pada bagian `tuning` di
+`configs/baseline.yaml`. Konfigurasi terbaik dapat digunakan untuk menjalankan
+kembali centralized dan kemudian menjadi konfigurasi arsitektur yang sama pada
+client dan global model decentralized.
 
 ## Preview eksperimen federated
 

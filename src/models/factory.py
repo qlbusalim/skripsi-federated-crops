@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from .recurrent import BiLSTM, GRU, LSTM, RNN
+from .recurrent import BiLSTM, GRU, LSTM, RNN, BiGRU
 
 
-MODEL_TYPES = {"rnn": RNN, "lstm": LSTM, "gru": GRU, "bilstm": BiLSTM}
+MODEL_TYPES = {"rnn": RNN, "lstm": LSTM, "gru": GRU, "bilstm": BiLSTM, "bigru": BiGRU}
 
 
 def create_model(config: dict[str, Any], **overrides: Any):

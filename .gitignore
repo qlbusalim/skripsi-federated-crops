@@ -1,6 +1,14 @@
-# notebooks
-# *.ipynb
-
 # Python cache
 __pycache__/
 *.py[cod]
+
+# Virtual environments and secrets
+.venv/
+venv/
+.env
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Generated experiment outputs
+results/

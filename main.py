@@ -11,7 +11,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Federated crops production prediction")
     parser.add_argument(
         "command",
-        choices=["prepare-data", "prepare-weather", "prepare-agriculture", "build-dataset", "centralized", "federated"],
+        choices=["prepare-data", "prepare-weather", "prepare-agriculture", "build-dataset", "centralized", "tune-centralized", "federated"],
     )
     parser.add_argument("--config", default="configs/baseline.yaml")
     args = parser.parse_args()
@@ -34,12 +34,19 @@ def main() -> None:
         prepare_agriculture()
         build_dataset()
     elif args.command == "centralized":
-        from experiments.run_centralized import prepare_experiment
-        prepared = prepare_experiment(config)
-        print("Centralized experiment skeleton ready")
+        from experiments.run_centralized import run_experiment
+        result = run_experiment(config)
+        print("Centralized experiment complete")
         print(f"Model: {config['model']['name']}")
-        print(f"Sequences: {len(prepared['X'])}; shape: {prepared['X'].shape}")
-        print("Training and temporal split are not activated yet.")
+        print(f"Clients trained: {len(result['results'])}")
+        print(f"Metrics: {result['output_dir'] / 'all_client_metrics.csv'}")
+    elif args.command == "tune-centralized":
+        from experiments.tune_centralized import run_tuning
+        result = run_tuning(config)
+        study = result["study"]
+        print("Centralized Optuna tuning complete")
+        print(f"Best validation MAE: {study.best_value:.6f}")
+        print(f"Artifacts: {result['output_dir']}")
     else:
         print("Federated experiment skeleton ready")
         print(f"Mode: {config['project']['mode']}")
