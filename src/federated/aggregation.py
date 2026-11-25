@@ -55,15 +55,3 @@ def fedavg(
 			aggregated[key] = value.clone()
 
 	return aggregated
-
-
-def weighted_fedavg(
-	client_state_dicts: Sequence[Mapping[str, torch.Tensor]],
-	client_weights: Sequence[float],
-) -> OrderedDict[str, torch.Tensor]:
-	"""Convenience alias for FedAvg with explicit client weights."""
-	if len(client_weights) != len(client_state_dicts):
-		raise ValueError("client_weights must match the number of clients")
-	if any(weight < 0 for weight in client_weights):
-		raise ValueError("client_weights must be non-negative")
-	return fedavg(client_state_dicts, client_sizes=client_weights)
