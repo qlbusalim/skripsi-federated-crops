@@ -9,6 +9,3 @@ venv/
 
 # Jupyter temporary files
 .ipynb_checkpoints/
-
-# Generated experiment outputs
-results/
