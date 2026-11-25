@@ -1,0 +1,8 @@
+model_name: lstm
+hidden_size: 32
+num_layers: 1
+window_size: 10
+optimizer: adam
+learning_rate: 0.0028908752065656923
+batch_size: 2
+loss: mse

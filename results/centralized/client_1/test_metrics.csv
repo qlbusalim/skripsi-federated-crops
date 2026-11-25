@@ -1,0 +1,2 @@
+model_name,client_id,province,training_mae,training_rmse,testing_mae,testing_rmse
+lstm_1,client_1,Banten,26187.7952734375,43001.3535350654,42238.91015625,59735.13214164032

@@ -1,0 +1,6 @@
+province,rows,date_min,date_max,missing_values,negative_values,duplicate_periods,valid
+Banten,84,2019-01-01,2025-12-01,0,0,0,True
+DI Yogyakarta,84,2019-01-01,2025-12-01,0,0,0,True
+Jawa Barat,84,2019-01-01,2025-12-01,0,0,0,True
+Jawa Tengah,84,2019-01-01,2025-12-01,0,0,0,True
+Jawa Timur,84,2019-01-01,2025-12-01,0,0,0,True

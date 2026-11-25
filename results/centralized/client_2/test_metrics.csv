@@ -1,0 +1,2 @@
+model_name,client_id,province,training_mae,training_rmse,testing_mae,testing_rmse
+lstm_2,client_2,DI Yogyakarta,18745.186044921877,30335.630477344,18737.984375,29281.192486476753
