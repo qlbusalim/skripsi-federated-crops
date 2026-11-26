@@ -1,0 +1,64 @@
+project:
+  name: federated-crops-production-prediction
+  mode: centralized
+  seed: 42
+experiment:
+  output_name: month-sincos-v1
+paths:
+  final_dataset: data/processed/final_province_dataset.csv
+  results_dir: results
+data:
+  date_column: date
+  group_column: province
+  target_column: paddy_prod
+  feature_columns:
+  - PRECTOTCORR
+  - RH2M
+  - T2M
+  - harvested_area
+  - month_sin
+  - month_cos
+  feature_engineering:
+    sinusoidal:
+      enabled: true
+      source: month
+      period: 12
+  sequence:
+    window_size: 12
+    horizon: 1
+split:
+  train_end: 2023-12-01
+  validation_end: 2024-12-01
+centralized:
+  expected_clients: 5
+model:
+  name: bigru
+  hidden_size: 32
+  num_layers: 3
+  output_size: 1
+training:
+  loss: mse
+  optimizer: adamw
+  learning_rate: 0.004395994526616342
+  scheduler:
+    name: reduce_on_plateau
+    factor: 0.5
+    patience: 2
+    threshold: 0.0001
+    min_lr: 1.0e-06
+  epochs: 100
+  batch_size: 8
+  device: cuda
+  patience: 5
+  min_delta: 0.0
+  verbose: 1
+federated:
+  enabled: false
+  rounds: 10
+  local_epochs: 1
+  fraction_fit: 1.0
+  fraction_evaluate: 1.0
+evaluation:
+  metrics:
+  - mae
+  - rmse

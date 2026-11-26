@@ -1,2 +1,0 @@
-model_name,client_id,province,training_mae,training_rmse,testing_mae,testing_rmse
-lstm_3,client_3,Jawa Barat,79439.4428125,137357.85287480327,140513.78385416666,182345.32413131176

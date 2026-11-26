@@ -1,0 +1,81 @@
+study_name: centralized_month_sincos_v1
+objective: mean_validation_mae
+best_value: 62394.75182617188
+best_params:
+  model_name: bigru
+  hidden_size: 32
+  num_layers: 3
+  window_size: 12
+  optimizer: adamw
+  learning_rate: 0.004395994526616342
+  batch_size: 8
+  loss: mse
+best_trial_number: 43
+best_trial_user_attributes:
+  mean_validation_mae: 62394.75182617188
+  mean_validation_rmse: 76657.14520536267
+  repeat_0_client_1_validation_mae: 35820.75040690104
+  repeat_0_client_1_validation_rmse: 44752.358554027174
+  repeat_0_client_2_validation_mae: 11251.327799479166
+  repeat_0_client_2_validation_rmse: 19082.45253945865
+  repeat_0_client_3_validation_mae: 131321.8203125
+  repeat_0_client_3_validation_rmse: 156684.37565580732
+  repeat_0_client_4_validation_mae: 74587.69010416667
+  repeat_0_client_4_validation_rmse: 99162.13327977626
+  repeat_0_client_5_validation_mae: 33803.5859375
+  repeat_0_client_5_validation_rmse: 44271.30744682554
+  repeat_1_client_1_validation_mae: 26874.750325520832
+  repeat_1_client_1_validation_rmse: 34572.576635123296
+  repeat_1_client_2_validation_mae: 9788.469563802084
+  repeat_1_client_2_validation_rmse: 15547.765803722014
+  repeat_1_client_3_validation_mae: 133085.734375
+  repeat_1_client_3_validation_rmse: 159459.75729573928
+  repeat_1_client_4_validation_mae: 90167.6484375
+  repeat_1_client_4_validation_rmse: 99543.29359791016
+  repeat_1_client_5_validation_mae: 42554.018229166664
+  repeat_1_client_5_validation_rmse: 48776.978129673495
+  repeat_2_client_1_validation_mae: 39542.5556640625
+  repeat_2_client_1_validation_rmse: 48844.49206513992
+  repeat_2_client_2_validation_mae: 16452.440592447918
+  repeat_2_client_2_validation_rmse: 21093.532879294336
+  repeat_2_client_3_validation_mae: 135581.11197916666
+  repeat_2_client_3_validation_rmse: 160346.30313085543
+  repeat_2_client_4_validation_mae: 79347.95572916667
+  repeat_2_client_4_validation_rmse: 98499.91453406206
+  repeat_2_client_5_validation_mae: 69109.54166666667
+  repeat_2_client_5_validation_rmse: 95198.99524227144
+  repeat_3_client_1_validation_mae: 37578.906982421875
+  repeat_3_client_1_validation_rmse: 52587.11910790784
+  repeat_3_client_2_validation_mae: 17615.6015625
+  repeat_3_client_2_validation_rmse: 22457.793249752638
+  repeat_3_client_3_validation_mae: 130327.23697916667
+  repeat_3_client_3_validation_rmse: 155748.35501186136
+  repeat_3_client_4_validation_mae: 81605.11458333333
+  repeat_3_client_4_validation_rmse: 93881.25365234759
+  repeat_3_client_5_validation_mae: 55135.044270833336
+  repeat_3_client_5_validation_rmse: 66493.34079271367
+  repeat_4_client_1_validation_mae: 31275.735270182293
+  repeat_4_client_1_validation_rmse: 37252.49241514247
+  repeat_4_client_2_validation_mae: 17034.236653645832
+  repeat_4_client_2_validation_rmse: 21977.25533234128
+  repeat_4_client_3_validation_mae: 140605.1171875
+  repeat_4_client_3_validation_rmse: 171609.26465416045
+  repeat_4_client_4_validation_mae: 75859.46354166667
+  repeat_4_client_4_validation_rmse: 90677.73718678826
+  repeat_4_client_5_validation_mae: 43542.9375
+  repeat_4_client_5_validation_rmse: 57907.781941364774
+  std_validation_mae: 3612.5820676205735
+  std_validation_rmse: 4691.702703457188
+  validation_mae_by_repeat:
+  - 57357.034912109375
+  - 60494.124186197914
+  - 68006.72112630209
+  - 64452.38087565104
+  - 61663.49803059896
+  validation_rmse_by_repeat:
+  - 72790.525495179
+  - 71580.07429243365
+  - 84796.64757032464
+  - 78233.57236291663
+  - 75884.90630595945
+completed_trials: 30

@@ -1,0 +1,13 @@
+client_id,model_name,date,province,actual,predicted
+client_2,lstm_2,2025-01-01,DI Yogyakarta,35465.86,66503.555
+client_2,lstm_2,2025-02-01,DI Yogyakarta,120952.625,110214.46
+client_2,lstm_2,2025-03-01,DI Yogyakarta,90075.92,101043.27
+client_2,lstm_2,2025-04-01,DI Yogyakarta,54072.56,76121.664
+client_2,lstm_2,2025-05-01,DI Yogyakarta,30314.74,54441.336
+client_2,lstm_2,2025-06-01,DI Yogyakarta,65598.6,53605.383
+client_2,lstm_2,2025-07-01,DI Yogyakarta,43050.37,45926.42
+client_2,lstm_2,2025-08-01,DI Yogyakarta,38641.79,34716.34
+client_2,lstm_2,2025-09-01,DI Yogyakarta,14731.58,21861.572
+client_2,lstm_2,2025-10-01,DI Yogyakarta,19535.08,15752.377
+client_2,lstm_2,2025-11-01,DI Yogyakarta,19298.89,20887.545
+client_2,lstm_2,2025-12-01,DI Yogyakarta,15772.08,39226.24
