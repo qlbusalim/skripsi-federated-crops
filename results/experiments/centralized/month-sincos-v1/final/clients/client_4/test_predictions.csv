@@ -1,0 +1,13 @@
+client_id,model_name,date,province,actual,predicted
+client_4,bigru_4,2025-01-01,Jawa Tengah,194649.0,257580.56
+client_4,bigru_4,2025-02-01,Jawa Tengah,798789.25,721288.6
+client_4,bigru_4,2025-03-01,Jawa Tengah,1.9487455e+06,1.9641086e+06
+client_4,bigru_4,2025-04-01,Jawa Tengah,1.2687556e+06,848201.25
+client_4,bigru_4,2025-05-01,Jawa Tengah,474734.75,510208.2
+client_4,bigru_4,2025-06-01,Jawa Tengah,790385.25,1.1990556e+06
+client_4,bigru_4,2025-07-01,Jawa Tengah,1.0730612e+06,1.3931521e+06
+client_4,bigru_4,2025-08-01,Jawa Tengah,824745.44,725570.56
+client_4,bigru_4,2025-09-01,Jawa Tengah,663616.56,547597.3
+client_4,bigru_4,2025-10-01,Jawa Tengah,530157.44,446721.94
+client_4,bigru_4,2025-11-01,Jawa Tengah,410189.03,342337.1
+client_4,bigru_4,2025-12-01,Jawa Tengah,326233.7,297822.7

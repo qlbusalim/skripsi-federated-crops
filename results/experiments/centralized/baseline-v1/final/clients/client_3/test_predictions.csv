@@ -1,0 +1,13 @@
+client_id,model_name,date,province,actual,predicted
+client_3,lstm_3,2025-01-01,Jawa Barat,362854.44,263887.9
+client_3,lstm_3,2025-02-01,Jawa Barat,445035.72,557612.5
+client_3,lstm_3,2025-03-01,Jawa Barat,1.2192786e+06,1.5244952e+06
+client_3,lstm_3,2025-04-01,Jawa Barat,1.31391e+06,1.3044344e+06
+client_3,lstm_3,2025-05-01,Jawa Barat,1.101292e+06,813746.3
+client_3,lstm_3,2025-06-01,Jawa Barat,716294.75,805745.3
+client_3,lstm_3,2025-07-01,Jawa Barat,1.03217075e+06,859922.56
+client_3,lstm_3,2025-08-01,Jawa Barat,935039.56,896146.06
+client_3,lstm_3,2025-09-01,Jawa Barat,736020.2,822838.4
+client_3,lstm_3,2025-10-01,Jawa Barat,969970.56,730628.44
+client_3,lstm_3,2025-11-01,Jawa Barat,839212.8,627722.94
+client_3,lstm_3,2025-12-01,Jawa Barat,555574.25,517694.5

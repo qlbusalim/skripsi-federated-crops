@@ -1,2 +1,0 @@
-model_name,client_id,province,training_mae,training_rmse,testing_mae,testing_rmse
-lstm_5,client_5,Jawa Timur,160217.33625,214479.45897854448,160542.58072916666,211972.93191033226

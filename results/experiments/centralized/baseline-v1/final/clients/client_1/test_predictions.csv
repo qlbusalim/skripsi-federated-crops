@@ -1,0 +1,13 @@
+client_id,model_name,date,province,actual,predicted
+client_1,lstm_1,2025-01-01,Banten,20822.2,18366.754
+client_1,lstm_1,2025-02-01,Banten,138714.14,98156.07
+client_1,lstm_1,2025-03-01,Banten,398689.78,352825.2
+client_1,lstm_1,2025-04-01,Banten,296544.8,240848.42
+client_1,lstm_1,2025-05-01,Banten,63718.934,77345.05
+client_1,lstm_1,2025-06-01,Banten,59061.13,77227.414
+client_1,lstm_1,2025-07-01,Banten,206875.23,119114.29
+client_1,lstm_1,2025-08-01,Banten,257750.34,187072.75
+client_1,lstm_1,2025-09-01,Banten,178194.84,143007.6
+client_1,lstm_1,2025-10-01,Banten,80854.73,52576.137
+client_1,lstm_1,2025-11-01,Banten,35765.887,19425.027
+client_1,lstm_1,2025-12-01,Banten,37024.81,-9642.628

@@ -1,0 +1,5 @@
+client_count: 5
+mean_training_mae: 55978.88859863281
+mean_training_rmse: 77867.75875727479
+mean_testing_mae: 94471.28556315105
+mean_testing_rmse: 128741.56611951767

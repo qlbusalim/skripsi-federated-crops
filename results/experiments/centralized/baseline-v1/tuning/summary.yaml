@@ -1,0 +1,14 @@
+study_name: centralized_baseline_v1
+objective: mean_validation_mae
+best_value: 76210.43188191732
+best_trial_number: 49
+completed_trials: 36
+best_params:
+  model_name: lstm
+  hidden_size: 32
+  num_layers: 1
+  window_size: 10
+  optimizer: adam
+  learning_rate: 0.0028908752065656923
+  batch_size: 2
+  loss: mse
